@@ -557,6 +557,7 @@ body.dark-mode .hobby-card {
 /* =========================
    Section: Projects
    ========================= */
+
 .projects-section {
   padding: 50px 20px;
   max-width: 1200px;
@@ -570,12 +571,13 @@ body.dark-mode .hobby-card {
   color: var(--accent-color);
 }
 
-/* Flexbox for projects - responsive */
 .projects-grid {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 20px;
-  justify-content: center;
+  max-height: none;
+  overflow-y: visible;
+  padding-right: 0;
 }
 
 .project-card {
@@ -584,9 +586,6 @@ body.dark-mode .hobby-card {
   padding: 20px;
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 100%;
-  max-width: 380px;
-  margin: 0 auto;
 }
 
 .project-card:hover {
@@ -603,49 +602,39 @@ body.dark-mode .hobby-card {
 .project-card h3 {
   font-size: 1.3rem;
   margin-bottom: 10px;
+  color: var(--accent-color);
 }
 
 .project-card p {
   font-size: 0.95rem;
   line-height: 1.5;
+  color: var(--text-color);
 }
 
 .project-card .btn {
   display: block;
+  max-width: 200px;
   margin: 15px auto 0 auto;
   text-align: center;
-  max-width: 200px;
 }
 
-/* =========================
-   See Projects Section
-   ========================= */
-.see-projects-section {
-  background: linear-gradient(to bottom, #d7e4f900 0%, #1e70d2 100%);
-  padding: 60px 0;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 300px;
+/* Optional scrollbar styling */
+.projects-grid::-webkit-scrollbar {
+  width: 8px;
 }
 
-.see-projects-btn {
-  background-color: #fff;
-  color: #1e70d2;
-  font-weight: 600;
-  padding: 16px 40px;
-  font-size: 1.25rem;
-  border-radius: 30px;
-  text-decoration: none;
-  box-shadow: 0 4px 15px rgba(30, 112, 210, 0.4);
-  transition: background-color 0.3s ease, color 0.3s ease;
+.projects-grid::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 4px;
 }
 
-.see-projects-btn:hover {
-  background-color: #1e70d2;
-  color: #fff;
-  box-shadow: 0 6px 20px rgba(30, 112, 210, 0.7);
+/* Responsive adjustments: remove fixed height and scrollbar on smaller screens */
+@media (max-width: 900px) {
+  .projects-grid {
+    max-height: none;
+    overflow-y: visible;
+    padding-right: 0;
+  }
 }
 
 /* =========================
@@ -779,7 +768,7 @@ footer .copyright {
   .project-card {
     padding: 10px;
   }
-}
+
 
 /* =========================
    Minor Tweaks
