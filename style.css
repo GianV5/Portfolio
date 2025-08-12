@@ -241,18 +241,20 @@ body.dark-mode .btn.black {
   text-decoration: none;
 }
 
-.social-btn.fb,
-.social-btn.yt,
-.social-btn.tt,
-.social-btn.dc,
-.social-btn.ig {
-  background: #1877f2;
-}
+/* Individual platform colors */
+.social-btn.fb { background: #007BFF; }   /* Facebook */
+.social-btn.yt { background: #007BFF; }   /* YouTube */
+.social-btn.tt { background: #007BFF; }   /* TikTok */
+.social-btn.dc { background: #007BFF; }   /* Discord */
+.social-btn.ig { background: #007BFF; } /* Instagram */
+.social-btn.sp { background: #007BFF; }   /* Spotify */
 
 .social-btn:hover {
   transform: scale(1.1);
   opacity: 0.8;
 }
+
+
 
 .socials a {
   display: inline-block;
@@ -266,6 +268,7 @@ body.dark-mode .btn.black {
 .socials a:hover {
   color: var(--accent-color);
 }
+
 
 /* =========================
    Typing Animation
@@ -495,6 +498,7 @@ body.dark-mode .skill-card {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .timeline-content h3 {
@@ -517,6 +521,23 @@ body.dark-mode .skill-card {
 .timeline-content ul li {
   margin-bottom: 8px;
   line-height: 1.6;
+}
+
+/* ===== Highlight for Municipality of San Manuel ===== */
+.timeline-item.municipality {
+  transform: scale(1.05);
+}
+
+.timeline-item.municipality .timeline-content {
+  background: linear-gradient(135deg, rgba(0, 123, 255, 0.15), rgba(0, 123, 255, 0.05));
+  border: 2px solid var(--accent-color);
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.2);
+}
+
+.timeline-item.municipality .timeline-date {
+  font-size: 1.1rem;
+  color: #ff9800; /* makes the date pop more */
+  font-weight: bold;
 }
 
 /* =========================
