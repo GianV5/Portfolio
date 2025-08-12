@@ -42,7 +42,7 @@
     <div class="projects-grid">
 
       <!-- Goldenage Project -->
-      <div class="project-card">
+      <div class="project-card ">
         <img src="goldenage.png" alt="Goldenage Project" />
         <h3>Goldenage</h3>
         <p>
@@ -55,7 +55,7 @@
       </div>
 
       <!-- Personal Portfolio -->
-      <div class="project-card">
+      <div class="project-card fade-in-section">
         <img src="portfolio.png" alt="Personal Portfolio Project" />
         <h3>Personal Portfolio</h3>
         <p>
@@ -68,7 +68,7 @@
       </div>
 
       <!-- Gfilms Project -->
-      <div class="project-card">
+      <div class="project-card fade-in-section">
         <img src="gfilms.png" alt="Gfilms Project" />
         <h3>Gfilms</h3>
         <p>
@@ -81,7 +81,7 @@
       </div>
 
       <!-- Polaroid Films Project -->
-      <div class="project-card">
+      <div class="project-card fade-in-section">
         <img src="polaroid.png" alt="Polaroid Films Project" />
         <h3>Polaroid Films</h3>
         <p>
@@ -94,7 +94,7 @@
       </div>
 
       <!-- Covered Concert: Cup of Joe -->
-      <div class="project-card">
+      <div class="project-card fade-in-section">
         <img src="coj.png" alt="Covered Concert: Cup of Joe" />
         <h3>Covered Concert: Cup of Joe</h3>
         <p>
@@ -107,7 +107,7 @@
       </div>
 
       <!-- Radztech Intern Logo -->
-      <div class="project-card">
+      <div class="project-card fade-in-section">
         <img src="radz.jpg" alt="Radztech Intern Logo" />
         <h3>Radztech Intern Logo</h3>
         <p>
@@ -152,6 +152,26 @@
         : '<i class="fas fa-moon"></i>';
     });
   </script>
+  <script>
+  const faders = document.querySelectorAll('.fade-in-section');
+
+  const appearOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -20px 0px"
+  };
+
+  const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+</script>
 
 </body>
 </html>
