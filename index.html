@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,6 +46,7 @@
       <a href="Resume.pdf" class="btn" download>Download Resume</a>
       <a href="#contact" class="btn black">Contact Info</a>
     </div>
+    
   </section>
 
 <section id="about" class="professional-summary">
@@ -64,7 +66,7 @@
     </div>
 
     <div class="summary-image">
-      <img src="images/prof.jpg" alt="Carlo Photo">
+        <img src="images/prof.jpg" alt="Carlo Photo">
     </div>
   </div>
 
@@ -81,7 +83,7 @@
 
 <hr class="section-divider">
 
-  <section id="skills" class="my-skills fade-in-section">
+  <section id="skills" class="my-skills">
   <div class="container">
     <h2>My Skills</h2>
 
@@ -117,7 +119,7 @@
 <hr class="section-divider">
 
 
-<section id="hobbies" class="hobbies-interests fade-in-section">
+<section id="hobbies" class="hobbies-interests">
   <div class="container">
     <h2>Hobbies & Interests</h2>
     <div class="hobbies-list">
@@ -179,7 +181,7 @@
 
 <hr class="section-divider">
 
-<section id="experience" class="professional-experience fade-in-section">
+<section id="experience" class="professional-experience">
   <h2>Professional Experience</h2>
   <div class="timeline">
 
@@ -187,8 +189,7 @@
       <div class="timeline-date">Aug 2025 – Present</div>
       <div class="timeline-content">
         <h3>Graphic Artist & Social Media Manager</h3>
-        <h4>LGU San Manuel, Isabela
-</h4>
+        <h4>Municipality of San Manuel</h4>
         <ul>
           <li>Design publicity materials, infographics, and event banners for official use.</li>
           <li>Manage and maintain the official LGU San Manuel Facebook page, ensuring consistent branding and engagement.</li>
@@ -308,24 +309,6 @@
         : '<i class="fas fa-moon"></i>';
     });
   </script>
-
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll(".fade-in-section");
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, { threshold: 0.2 });
-
-    sections.forEach(section => {
-      observer.observe(section);
-    });
-  });
-</script>
 
 </body>
 </html>
